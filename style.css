@@ -154,12 +154,13 @@ html, body {
 
 .header-search {
     display: grid;
+    grid-row: 1 / 2;
     grid-template-columns: 3fr 1fr;
     align-items: center;
     justify-content: space-around;
 }
 
-.header-search > * {
+.header-search > *, .header-bottom > * {
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -176,6 +177,11 @@ html, body {
 .icon-small {
     height: 32px; 
     width: 32px;
+}
+
+.icon-extra-small {
+    height: 29px; 
+    width: 29px;
 }
 
 .icon-filter-small::selection, .icon-filter::selection {
@@ -207,4 +213,73 @@ html, body {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+}
+
+.header-bottom {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-template-columns: 400px 400px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.big-account-circle {
+    height: 64px;
+    width: 64px;
+}
+
+.header-bottom > .left {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-template-columns: 64px 300px;
+    align-items: center;
+    gap: 11px;
+    justify-content: start;
+}
+
+.greeting > p {
+    font-weight: bold;
+}
+
+.greeting > p {
+    font-weight: bold;
+}
+
+.greeting > p:nth-child(1) {
+    font-size: 13px;
+}
+
+.greeting > p:nth-child(2) {
+    font-size: 24px;
+}
+
+.media-row {
+    grid-column: 2 / 3;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    padding-right: 64px;
+}
+
+.media-row button {
+    background-color: var(--sky-blue);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    height: 40px;
+    width: 108px;
+    padding: 0px;
+    margin: 0px;
+    justify-content: end;
+}
+
+.media-row button:hover, .logo:hover, 
+.goto:hover, .icon-small:hover,
+.account-circle:hover, .account .name:hover {
+    cursor: pointer;
 }
