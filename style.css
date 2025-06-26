@@ -25,9 +25,12 @@
 
 }
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     font-family: 'robotoregular', serif;
-    box-sizing: border-box;
     --sidebar-size: 300px;
     --header-size: 160px;
     --header-search-size: 64px;
@@ -35,6 +38,7 @@
     --baby-gray: #E2E8F0;
     --yellow-gold: #E3B030;
     --card-border-radius: 9px;
+    --desc-grey: rgb(103, 103, 103);
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -169,7 +173,7 @@ html, body {
 
 .search-space {
     display: grid;
-    grid-template-columns: 30px minmax(300px, 800px);
+    grid-template-columns: 30px minmax(200px, 800px);
     align-items: center;
     height: 100%;
     gap: 10px;
@@ -289,8 +293,7 @@ html, body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 280px;
     padding: 16px;
     padding-top: 24px;
     gap: 18px;
@@ -314,30 +317,31 @@ html, body {
 .text-content > p.description {
     font-weight: lighter;
     font-size: 14px;
-    color: rgb(81, 81, 81);
+    color: var(--desc-grey);
 }
-
 
 .middle {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-color: rgb(207, 207, 207);
     display: grid;
     grid-template-rows: 25px 1fr;
     padding: 12px;
     gap: 12px;
 }
 
-.announcements {
+.right {
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    background-color: rgb(207, 207, 207)
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    height: 700px;
 }
 
 .trends {
-    grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: rgb(207, 207, 207)
+    grid-template-rows: 25px 1fr;
+    padding: 12px;
+    gap: 12px;
+    display: grid;
 }
 
 .card {
@@ -360,7 +364,6 @@ html, body {
 }
 
 .card-content {
-    box-sizing: border-box; /* ??? why it disabled ???*/
     grid-column: 2 / 3;
     padding: 20px;
     padding-left: 16px;
@@ -397,4 +400,94 @@ html, body {
     column-gap: 14px;
     align-content: start;
     justify-items: start;
+}
+
+.announcements {
+    grid-row: 1 / 2;
+    grid-template-rows: 25px 1fr;
+    padding: 12px;
+    gap: 12px;
+    display: grid;
+}
+
+.announce-set {
+    background-color: white;
+    height: 280px;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    justify-items: center;
+}
+
+.announce-card {
+    padding: 8px;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 15px 32px;
+    gap: 5px;
+    align-content: center;
+}
+
+.announce-2 {
+    --border-grey: rgb(166, 166, 166);
+    border-top: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--border-grey);
+}
+
+.announce-card > p:first-child {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.announce-card > p:last-child {
+    font-weight: lighter;
+    font-size: 12px;
+    color: var(--desc-grey);
+}
+
+.trend-set {
+    background-color: white;
+    height: 280px;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.trend-card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 90%;
+    gap: 3px;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.trend-card > .account-circle {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.trend-card > p:first-of-type {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-weight: bold;
+    font-size: 13px;
+    align-self: end;
+}
+
+.trend-card > p:last-child {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-weight: lighter;
+    font-size: 12px;
+    color: var(--desc-grey);
+    align-self: start;
 }
