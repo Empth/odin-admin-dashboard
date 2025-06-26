@@ -282,7 +282,8 @@ html, body {
 
 .media-row button:hover, .logo:hover, 
 .goto:hover, .icon-small:hover,
-.account-circle:hover, .account .name:hover {
+.account-circle:hover, .account .name:hover,
+.tri-icon:hover {
     cursor: pointer;
 }
 
@@ -299,6 +300,23 @@ html, body {
     font-weight: bold;
     font-size: 18px;
 }
+
+.text-content > p.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.text-content > p.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.text-content > p.description {
+    font-weight: lighter;
+    font-size: 14px;
+    color: rgb(81, 81, 81);
+}
+
 
 .middle {
     grid-column: 1 / 2;
@@ -325,7 +343,7 @@ html, body {
 .card {
     border-radius: var(--card-border-radius);
     height: 180px;
-    width: 300px;
+    width: 310px;
     background-color: white;
     display: grid;
     grid-template-columns: 10px 1fr;
@@ -342,6 +360,41 @@ html, body {
 }
 
 .card-content {
+    box-sizing: border-box; /* ??? why it disabled ???*/
     grid-column: 2 / 3;
-    padding-left: 14px;
+    padding: 20px;
+    padding-left: 16px;
+    padding-top: 28px;
+    display: grid;
+    grid-template-rows: 1fr 25px;
+    align-content: space-between;
+    height: 180px;
+    gap: 5px;
+}
+
+.tri-icon {
+    height: 22px;
+    width: 22px;
+    filter: invert(1) brightness(0.1);
+}
+
+.tri-icon::selection {
+    color: unset;
+    background-color: unset;
+}
+
+.tri-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 24px);
+    gap: 18px;
+    justify-self: end;
+}
+
+.card-set {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+    column-gap: 14px;
+    align-content: start;
+    justify-items: start;
 }
